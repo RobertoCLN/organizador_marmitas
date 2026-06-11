@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'cadastro.dart';
 
 class TelaPrincipal extends StatefulWidget {
   const TelaPrincipal({super.key});
@@ -45,6 +46,18 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
           ),
         ],
       ),
+      floatingActionButton: _indiceAtual == 0
+          ? FloatingActionButton(
+              onPressed: () async {
+                // Navega para a tela de cadastro e espera o resultado
+                final novaMarmita = await Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Cadastro()),
+                );
+              },
+              child: const Icon(Icons.add),
+            )
+          : null,
     );
   }
 }
