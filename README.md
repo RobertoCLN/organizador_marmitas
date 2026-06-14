@@ -43,23 +43,26 @@ Antes de executar o projeto, certifique-se de que a máquina possui as seguintes
 **Passo 1: Clonar o repositório**
 Abra o terminal e execute o comando abaixo para baixar o código:
 
-````bash
+```bash
 git clone https://github.com/RobertoCLN/organizador_marmitas.git
+```
 
 **Passo 2: Acessar a pasta do projeto**
+
 ```bash
 cd organizador_marmitas
-
+```
 
 **Passo 3: Baixar as dependências**
 Execute:
+
 ```bash
 flutter pub get
+```
 
 **Passo 4: Executar o app**
 Execute:
+
 ```bash
 flutter run
-
-
-````
+```
