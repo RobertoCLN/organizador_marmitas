@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'cadastro.dart';
 import '../models/marmita.dart';
 import '../services/preferences_service.dart';
+import 'estatisticas.dart';
 
 class TelaPrincipal extends StatefulWidget {
   const TelaPrincipal({super.key});
@@ -118,7 +119,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
       // mostra a lista se o indice for 0, senao mostra estatisticas
       body: _indiceAtual == 0
           ? _construirAbaMarmitas()
-          : const Center(child: Text('Estatísticas em breve...')),
+          : Estatisticas(marmitas: _marmitas),
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _indiceAtual,
