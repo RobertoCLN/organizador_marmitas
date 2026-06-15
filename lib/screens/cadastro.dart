@@ -19,7 +19,7 @@ class _CadastroState extends State<Cadastro> {
     if (_nomeController.text.trim().isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Por favor, insira um nome para a marmita.'),
+          content: Text('Por favor, insira uma descrição para a marmita.'),
           backgroundColor: Colors.red,
         ),
       );
@@ -68,7 +68,7 @@ class _CadastroState extends State<Cadastro> {
             TextField(
               controller: _nomeController,
               decoration: const InputDecoration(
-                labelText: 'Nome da Marmita',
+                labelText: 'Descrição da Marmita',
                 border: OutlineInputBorder(),
               ),
             ),
@@ -76,25 +76,37 @@ class _CadastroState extends State<Cadastro> {
 
             const Text('Tipo de Marmita:', style: TextStyle(fontSize: 16)),
 
-            RadioListTile<String>(
-              title: const Text('Frango'),
-              value: 'Frango',
+            RadioGroup<String>(
               groupValue: _tipoSelecionado,
               onChanged: (String? valor) {
                 setState(() {
                   _tipoSelecionado = valor!;
                 });
               },
-            ),
-            RadioListTile<String>(
-              title: const Text('Carne'),
-              value: 'Carne',
-              groupValue: _tipoSelecionado,
-              onChanged: (String? valor) {
-                setState(() {
-                  _tipoSelecionado = valor!;
-                });
-              },
+              child: Column(
+                children: [
+                  RadioListTile<String>(
+                    title: const Text('Frango'),
+                    value: 'Frango',
+                  ),
+                  RadioListTile<String>(
+                    title: const Text('Carne'),
+                    value: 'Carne',
+                  ),
+                  RadioListTile<String>(
+                    title: const Text('Peixe'),
+                    value: 'Peixe',
+                  ),
+                  RadioListTile<String>(
+                    title: const Text('Vegetariana'),
+                    value: 'Vegetariana',
+                  ),
+                  RadioListTile<String>(
+                    title: const Text('Outros'),
+                    value: 'Outros',
+                  ),
+                ],
+              ),
             ),
 
             const Divider(),
